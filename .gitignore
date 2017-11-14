@@ -1,0 +1,10 @@
+t/
+*.swp
+*.tar.gz
+*.log
+gitversion
+algorithm_study
+vendor/*
+!vendor/vendor.json
+*.bak
+
