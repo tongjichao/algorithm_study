@@ -12,18 +12,46 @@ import (
 	"sort"
 	"strconv"
 
-	"cmcm.com/algorithm_study/data_structure"
-	"cmcm.com/algorithm_study/search"
+	"algorithm_study/data_structure"
+	"algorithm_study/search"
+	"algorithm_study/union_find"
 )
 
 func main() {
 
 	//	test_binnay_search()
 	//test_stack()
-	test_queue()
+	//test_queue()
+
+	test_union()
 
 }
 
+//测试union
+func test_union() {
+
+	data := [...][2]int64{{4, 3}, {3, 7}, {6, 5}, {2, 4}, {2, 1}, {5, 0}, {7, 2}, {6, 1}}
+
+	uf := union_find.NewUF(int64(len(data)))
+	for _, v := range data {
+		p := v[0]
+		q := v[1]
+
+		fmt.Println(uf.Id)
+		if uf.Connected(p, q) {
+			continue
+		}
+
+		uf.UnionFindQuick(p, q)
+
+		fmt.Println(p, "  ", q)
+	}
+
+	fmt.Println(uf.Count, "components")
+
+}
+
+//队列测试
 func test_queue() {
 	queue := data_structure.NewQueue()
 
@@ -35,6 +63,7 @@ func test_queue() {
 	queue.Dequeue()
 }
 
+//栈测试
 func test_stack() {
 	stack := data_structure.NewStack()
 
@@ -51,6 +80,7 @@ func test_stack() {
 
 }
 
+//二分查找测试
 func test_binnay_search() {
 	whitelist := []int{}
 
