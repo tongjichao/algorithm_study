@@ -10,10 +10,12 @@ import (
 	"log"
 	"os"
 	"sort"
+	//	"sort"
 	"strconv"
 
 	"algorithm_study/data_structure"
 	"algorithm_study/search"
+	"algorithm_study/sort"
 	"algorithm_study/union_find"
 )
 
@@ -23,8 +25,18 @@ func main() {
 	//test_stack()
 	//test_queue()
 
-	test_union()
+	//	test_union()
 
+	test_selectSort()
+
+}
+
+//测试选择排序
+func test_selectSort() {
+	data := []int64{3, 2, 1, 8, 6, 7, 9, 0}
+	mysort.SelectSort(&data)
+
+	fmt.Println(data)
 }
 
 //测试union
